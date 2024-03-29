@@ -47,8 +47,13 @@ function hanoi(from, via, to, n) {
 }
 
 function exHanoi_1(start, aux, end, n) {
-  alert("your function is not complete");
-  return;
+  let i = 0;
+  while (i < n) {
+    hanoi(start, end, aux, 1);
+    hanoi(end, start, aux, i * 6);
+    hanoi(aux, start, end, i * 6 + 3);
+    i++;
+  }
 }
 
 function exHanoi_2(A, B, C, D, n) {
@@ -58,8 +63,13 @@ function exHanoi_2(A, B, C, D, n) {
 }
 
 function exhanoi_3(A, B, C, n) {
-  alert("your function is not complete");
-  return;
+  let i = 0;
+  while (i < n) {
+    hanoi(A, C, B, i * 3);
+    hanoi(B, C, A, i * 3 + 2);
+    i++;
+  }
+  hanoi(A, B, C, 3 * n);
 }
 
 function moveDisks(from, to) {
